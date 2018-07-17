@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingMenager : MonoBehaviour {
+public class BuildingMenager : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject[] placeableObjectPrefabs;
+    private GameObject currentbuilding;
     public static bool isBuilding = false;
-    public static float buildingmen;
-    public GameObject Foundation1x1;
-	
-	void Update () {
-        if (buildingmen == 1 && !isBuilding)
-        {
-            isBuilding = true;
-            Instantiate(Foundation1x1, Vector3.zero, Foundation1x1.transform.rotation);
-        }
-	}
+
+    void Update()
+    {
+        
+    }
+    public void buduj(int id)
+    {
+
+        
+        currentbuilding = placeableObjectPrefabs[id];
+        Instantiate(currentbuilding, Vector3.zero, transform.rotation);
+            
+        
+    }
 }
